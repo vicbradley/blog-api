@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editor</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <h1>Editor</h1>
+        <a href="/draft/create">Create Post</a>
+
+        <% posts.forEach(post => { %>
+            <li><%= post.title %></li>
+            <p><%= post.author %></p>
+            <a href="draft/edit/<%= post._id %>">Edit</a>
+        <% })  %>
+        
+    </body>
+</html>

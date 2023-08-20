@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+@mixin remove-link-default-css {
+    text-decoration: none;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh;
+    background-color: white;
+    padding: 1rem;
+    padding-left: 4rem;
+    position: fixed;
+
+    .title {
+        font-size: 2rem;
+        font-weight: 700;
+        @include remove-link-default-css();
+    }
+}
+
+.desc {
+    margin-top: 15vh;
+    background-color: rgba(246, 247, 246, 255);
+    height: 60vh;
+    border: 1px solid rgb(222, 216, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    * {
+        width: 45%;
+    }
+
+    h2 {
+        padding-left: 4rem;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        line-height: 4rem;
+    }
+
+    p {
+        padding-left: 4rem;
+    }
+}
+
+.post-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    flex-wrap: wrap;
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        width: 25vw;
+        height: 45vh;
+        margin: 1rem;
+        margin-top: 4rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 2rem;
+
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-author {
+            margin-top: -0.5rem;
+            font-weight: 100;
+        }
+
+        .post-btn {
+            width: 80%;
+            height: 20%;
+            background-color: rgb(222, 216, 216);
+            @include remove-link-default-css();
+            text-align: center;
+            margin-top: 6rem;
+            border-radius: 0.2rem;
+            padding-top: 0.5rem;
+            font-weight: 100;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-btn:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+
+        .title {
+            width: 50%;
+            font-size: 2rem;
+        }
+    }
+
+    .desc {
+        margin-top: 10vh;
+        height: 40vh;
+        display: flex;
+
+        * {
+            width: 100%;
+        }
+
+        h2 {
+            padding-left: 2rem;
+            font-size: 3rem;
+        }
+
+        p {
+            padding-left: 2rem;
+            font-size: 1rem;
+        }
+    }
+
+    .post-container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        
+        .post {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80vw;
+    
+            .post-title {
+                text-align: center;
+            }
+    
+    
+            .post-btn {
+                margin-top: 8rem;
+                padding-top: 1rem;
+            }
+    
+        }
+    }
+}

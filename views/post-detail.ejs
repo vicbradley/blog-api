@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= post.title %></title>
+        <link rel="stylesheet" href="/stylesheets/post-detail.css" />
+    </head>
+    <body>
+        <header>
+            <a href="/" class="title">Blog</a>
+        </header>
+
+        <div class="post-desc">
+            <h1><%= post.title %></h1>
+            <p class="post-author"><%= post.author %></p>
+            <p class="post-content"><%= post.content %></p>
+        </div>
+
+        
+
+        <div class="comment-container">
+            <h3>Comments :</h3>
+            <% if(comments) { %>
+                    <% comments.forEach((comment) => { %>
+                        <div class="comment">
+                            <p class="comment-username"><%= comment.username %></p>
+                            <p><%= comment.text %></p>
+                            <p><%= comment.date %></p>
+                        </div>
+                    <% }) %>
+            <% } %>
+        </div>
+
+        <form method="POST" action="">
+            <label for="username">Username :</label>
+            <input type="text" name="username" id="username">
+
+            <label for="comment">Comment :</label>
+            <input type="text" name="comment" id="comment">
+
+            <button type="submit" >Submit</button>
+        </form>
+
+    </body>
+</html>
